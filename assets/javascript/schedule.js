@@ -23,9 +23,12 @@ window.onload = function () {
     // setting database to a variable
     const db = firebase.database().ref();
 
+    // grabbing variables from database
     db.on("value", function(snapshot){
+        //using an if statement to stop initial submit from posting twice
         if(counter < 1){ 
-            $("#body").append("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().dest + "</td><td>" + snapshot.val().frequency + "</td><td>" + snapshot.val().nextArrival + "</td><td>" + snapshot.val().minutesAway + "</td></tr>")
+            //appending variables from database
+            $("#body").append("<tr><td>" + snapshot.val().name + "</td><td>" + snapshot.val().dest + "</td><td>" + snapshot.val().frequency + "</td><td>" + snapshot.val().nextArrival + "</td><td>" + snapshot.val().minutesAway + "</td></tr>");
             counter += 1;
         } 
     })
