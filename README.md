@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+Train Scheduler
 
-You can use the [editor on GitHub](https://github.com/mbayers6370/Train-Schedule/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+The intent of this project is to use user input data to append to the 'Current Train Schedule' table. This data must use the current time to calculate when the next train will be and how long until that next train. These values must also be stored in a database for future use.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+This is solved by taking the user input storing it in a firebase database. When the page is refreshed the input will load, unless the user overwrites the current data. Once the data is input moment.js is used to calculate nextArrival and minutesAway. These are both appended to the table under 'Current Train Schedule' in their respective columns. 
 
-### Markdown
+Process:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+The first step in the process was figuring out moment.js and the logic to take the current time and train frequency to calculate the next arrival and minutes away. 
 
-```markdown
-Syntax highlighted code block
+Once this was done, storing the user input into a database with calculated information. 
 
-# Header 1
-## Header 2
-### Header 3
+Also, adding this information to 'Current Train Schedule'.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mbayers6370/Train-Schedule/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Then styling using Bootstrap.
